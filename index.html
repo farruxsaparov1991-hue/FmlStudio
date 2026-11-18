@@ -1,370 +1,143 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="FML STUDIO — dizayn, video montaj va Telegram media loyihalari.">
-<title>FML STUDIO</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--gold:#d6ad59;--bg:#090909;--card:#151515;--muted:#aaa}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:var(--bg);color:#f5f5f5;font-family:Arial,sans-serif;line-height:1.6}
-header{
-  position:sticky;
-  top:0;
-  z-index:5;
-  background:#090909f5;
-  border-bottom:1px solid #292929;
-  padding:10px 7%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  backdrop-filter:blur(12px);
-}
-.logo{
-  font-size:25px;
-  font-weight:900;
-  letter-spacing:2px;
-  white-space:nowrap;
-  flex:0 0 auto;
-}
-.logo img{
-  width:58px;
-  height:58px;
-  object-fit:contain;
-  display:block;
-}
-.logo span,h1 span,h2 span{color:var(--gold)}
-nav{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:clamp(10px,1.8vw,22px);
-  flex-wrap:nowrap;
-  min-width:0;
-}
-nav a{
-  color:#ddd;
-  text-decoration:none;
-  font-size:14px;
-}
-nav a:hover{color:var(--gold)}
-select{background:#171717;color:var(--gold);border:1px solid #555;padding:9px;border-radius:6px}
-.hero{min-height:520px;display:flex;align-items:center;padding:70px 9%;background:radial-gradient(ellipse at 80% 45%,#503b1c55,transparent 55%)}
-.hero-in{max-width:760px}
-.tag{color:var(--gold);letter-spacing:4px;font-size:13px}
-@media(max-width:650px){
-  header{
-    padding:9px 5%;
-    gap:10px;
-    align-items:center;
-    flex-wrap:wrap;
-  }
-  .logo img{
-    width:48px !important;
-    height:48px !important;
-  }
-  nav{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:8px 6px;
-    justify-content:stretch;
-    padding:8px 0 3px;
-    border-top:1px solid #242424;
-  }
-  nav a{
-    font-size:12px;
-    text-align:center;
-    padding:7px 3px;
-    background:#141414;
-    border:1px solid #242424;
-    border-radius:6px;
-    white-space:nowrap;
-  }
-  nav select{
-    grid-column:2;
-    justify-self:center;
-    width:76px;
-    padding:7px;
-  }
-  .hero{
-    padding:55px 7%;
-    min-height:490px;
-  }
-  section{padding:58px 6%}
-  .cards,.project-grid{grid-template-columns:1fr}
-  .section-title{font-size:29px}
-}
-.num{font-size:30px;color:var(--gold)}
-.card h3{margin:10px 0}
-.card p,.project p,.about p,.contact p{color:var(--muted)}
-#projects{background:#0d0d0d}
-.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:28px 0}
-.filter{background:#171717;color:#ddd;border:1px solid #383838;padding:10px 16px;border-radius:25px;cursor:pointer}
-.filter.active,.filter:hover{background:var(--gold);color:#111;border-color:var(--gold)}
-.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.project{padding:19px;min-height:160px;display:flex;flex-direction:column}
-.p-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.p-icon{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#302719;color:var(--gold);font-weight:bold}
-.p-cat{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
-.project h3{font-size:17px;margin:12px 0 2px;overflow-wrap:anywhere}
-.project p{font-size:13px;flex:1}
-.project a{color:var(--gold);text-decoration:none;font-weight:bold;font-size:13px;margin-top:13px}
-.project a:hover{text-decoration:underline}
-.about{text-align:center;background:#111}
-.about-in{max-width:820px;margin:auto}
-.contact{text-align:center}
-footer{text-align:center;padding:25px;border-top:1px solid #292929;color:#888;font-size:13px}
-@media(max-width:800px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:650px){
-header{padding:14px 5%;flex-wrap:wrap}
-nav{width:100%;justify-content:space-between;gap:7px}
-nav a{font-size:12px}
-.hero{padding:55px 7%;min-height:490px}
-section{padding:58px 6%}
-.cards,.project-grid{grid-template-columns:1fr}
-.section-title{font-size:29px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <meta name="description" content="FML STUDIO — grafik dizayn, video montaj, logo, reklama bannerlari va kreativ kontent.">
+  <title>FML STUDIO — Creative Digital Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#090a0d;--surface:#111319;--surface2:#171a21;--line:#292d37;--text:#f5f5f2;--muted:#a1a5af;--gold:#d7b36a;--gold2:#f1d89f;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}
+    .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(9,10,13,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:12px;font-family:Manrope,sans-serif;font-weight:800;letter-spacing:.14em;font-size:16px;white-space:nowrap}.brand img{width:48px;height:48px;object-fit:contain;border-radius:50%}.brand-mark{display:grid;place-items:center;width:45px;height:45px;border:1px solid rgba(215,179,106,.5);border-radius:13px;color:var(--gold);font-family:Manrope,sans-serif;font-size:17px;letter-spacing:-.08em}
+    .navlinks{display:flex;align-items:center;gap:clamp(14px,2.3vw,28px)}.navlinks a{font-size:13px;color:#c4c6cc;transition:color .2s}.navlinks a:hover,.navlinks a:focus-visible{color:var(--gold2)}.nav-actions{display:flex;align-items:center;gap:12px}.lang{background:#151820;border:1px solid var(--line);color:var(--text);border-radius:9px;padding:9px 10px;cursor:pointer}.menu-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--text);border-radius:9px;padding:8px 11px}
+    .hero{position:relative;overflow:hidden;padding:112px 0 104px;background:radial-gradient(ellipse at 78% 35%,rgba(173,127,52,.18),transparent 42%),radial-gradient(ellipse at 12% 90%,rgba(45,67,101,.16),transparent 42%)}.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 92%)}
+    .hero-inner{position:relative;z-index:1;max-width:800px}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}.eyebrow:before{content:"";width:26px;height:1px;background:var(--gold)}h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.15}h1{font-size:clamp(42px,7vw,78px);letter-spacing:-.055em;margin:23px 0 20px;max-width:850px}h1 span,.gold{color:var(--gold)}.hero-copy{max-width:630px;color:#b7bac2;font-size:clamp(16px,2vw,19px);margin:0 0 32px}.actions{display:flex;flex-wrap:wrap;gap:13px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:10px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17130b;font-weight:800;font-size:13px;border:1px solid transparent;transition:transform .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}.btn.secondary{background:transparent;color:var(--text);border-color:#464a54}.btn.secondary:hover{border-color:var(--gold);color:var(--gold2)}
+    .hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:56px;padding-top:23px;border-top:1px solid rgba(255,255,255,.1);max-width:690px}.meta-item strong{display:block;font:700 23px Manrope,sans-serif;color:var(--gold2)}.meta-item span{font-size:11px;color:var(--muted);letter-spacing:.06em}
+    section{padding:92px 0}.section-head{max-width:660px;margin-bottom:38px}.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}.section-title{font-size:clamp(30px,4vw,46px);letter-spacing:-.04em;margin:10px 0 14px}.section-intro{color:var(--muted);margin:0;font-size:15px}
+    .services-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.service{background:linear-gradient(160deg,#171a21,#101217);border:1px solid var(--line);border-radius:16px;padding:22px 18px;min-height:218px;transition:transform .2s,border-color .2s}.service:hover{transform:translateY(-5px);border-color:rgba(215,179,106,.5)}.service-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(215,179,106,.12);color:var(--gold2);font-size:20px;margin-bottom:23px}.service h3{font-size:16px;margin:0 0 9px}.service p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+    .portfolio{background:#0e1015;border-top:1px solid #20232b;border-bottom:1px solid #20232b}.portfolio-bar{display:flex;align-items:end;justify-content:space-between;gap:20px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0}.filter{border:1px solid #363a45;background:#151820;color:#c7c9cf;padding:9px 15px;border-radius:999px;font-size:12px;cursor:pointer}.filter.active,.filter:hover{background:var(--gold);border-color:var(--gold);color:#15120b}.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.project{min-height:174px;padding:21px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#181b23,#111319);display:flex;flex-direction:column}.project-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.project-icon{display:grid;place-items:center;width:37px;height:37px;border-radius:11px;background:#29251c;color:var(--gold2);font-size:12px;font-weight:800}.project-cat{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold)}.project h3{font-size:16px;margin:14px 0 2px}.project p{font-size:12px;color:var(--muted);margin:0}.project a{font-size:12px;color:var(--gold2);margin-top:auto;padding-top:15px;font-weight:700}.project a:hover{text-decoration:underline}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about-panel{min-height:300px;border:1px solid rgba(215,179,106,.27);border-radius:20px;background:radial-gradient(circle at 50% 40%,rgba(215,179,106,.15),transparent 55%),#12151b;display:grid;place-items:center;text-align:center;padding:32px}.monogram{font:800 clamp(70px,10vw,118px)/1 Manrope,sans-serif;letter-spacing:-.1em;color:var(--gold2);text-shadow:0 10px 55px rgba(215,179,106,.23)}.about-panel small{display:block;color:var(--muted);letter-spacing:.24em;font-size:10px;margin-top:18px}.about-copy p{color:var(--muted);font-size:14px}.values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}.value{border-left:2px solid var(--gold);padding:7px 0 7px 12px}.value strong{display:block;font-size:13px}.value span{font-size:11px;color:var(--muted)}
+    .contact{background:radial-gradient(ellipse at 50% 0,rgba(215,179,106,.13),transparent 55%),#101217;border-top:1px solid #252932}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}.contact-info p{color:var(--muted);font-size:14px}.contact-links{display:grid;gap:10px;margin-top:24px}.contact-link{display:flex;align-items:center;gap:12px;padding:13px 15px;border:1px solid var(--line);border-radius:11px;background:#151820;font-size:13px}.contact-link b{color:var(--gold2);font-size:11px}.order-form{display:grid;grid-template-columns:1fr 1fr;gap:13px;padding:24px;border:1px solid var(--line);border-radius:17px;background:#151820}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:11px;color:#c4c6cc}.field input,.field textarea,.field select{width:100%;background:#0e1015;border:1px solid #343844;border-radius:9px;padding:12px;color:var(--text);outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}.field textarea{min-height:112px;resize:vertical}.form-note{grid-column:1/-1;margin:0;color:var(--muted);font-size:10px}
+    footer{padding:25px 0;border-top:1px solid #262a33;color:#858a95;font-size:11px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:15px}.footer-brand{color:var(--gold2);font-family:Manrope,sans-serif;font-weight:800;letter-spacing:.15em}
+    .toast{position:fixed;right:20px;bottom:20px;z-index:40;max-width:min(380px,calc(100% - 40px));padding:13px 16px;background:#20252d;border:1px solid #4b5361;border-radius:11px;color:var(--text);font-size:13px;box-shadow:0 12px 35px #0008;display:none}.toast.show{display:block}:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+    @media(max-width:1000px){.services-grid{grid-template-columns:repeat(3,1fr)}.navlinks{gap:13px}.navlinks a{font-size:12px}}
+    @media(max-width:760px){.wrap{width:min(100% - 34px,var(--max))}.nav{min-height:72px}.menu-toggle{display:inline-flex}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;padding:14px 18px 19px;background:#0d0f14;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:11px 5px;border-bottom:1px solid #242833;font-size:14px}.hero{padding:82px 0 72px}.hero-meta{gap:18px}.services-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid,.contact-grid{grid-template-columns:1fr;gap:30px}.about-panel{min-height:235px}.portfolio-bar{display:block}section{padding:70px 0}}
+    @media(max-width:480px){.brand{font-size:13px;gap:8px}.brand img,.brand-mark{width:39px;height:39px}.nav-actions{gap:7px}.lang{padding:8px}.hero{padding:66px 0 60px}h1{font-size:43px}.hero-copy{font-size:15px}.hero-meta{gap:15px}.meta-item strong{font-size:20px}.services-grid{grid-template-columns:1fr 1fr;gap:9px}.service{padding:17px 13px;min-height:210px}.service-icon{margin-bottom:16px}.project-grid{grid-template-columns:1fr}.order-form{grid-template-columns:1fr;padding:17px}.field.full,.form-note{grid-column:auto}.values{grid-template-columns:1fr 1fr}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+  </style>
 </head>
 <body>
-<header>
- <a class="logo" href="#home">
-<img src="file_000000005470821080fa8e63f32ac374.jpg"
-     alt="FML STUDIO"
-     style="width:76px;height:76px;max-width:76px;object-fit:contain;display:block;">
-</a>
- <nav>
-  <a href="#home" data-t="home">Bosh sahifa</a>
-  <a href="#services" data-t="services">Xizmatlar</a>
-  <a href="#projects" data-t="projectsNav">Loyihalar</a>
-  <a href="#about" data-t="about">Biz haqimizda</a>
-  <a href="#contact" data-t="contact">Aloqa</a>
-  <select id="language" aria-label="Language">
-   <option value="uz">UZ</option>
-   <option value="ru">RU</option>
-   <option value="tr">TR</option>
-  </select>
- </nav>
-</header>
-
-<main>
-<section class="hero" id="home">
- <div class="hero-in">
-  <div class="tag">CREATIVE DIGITAL STUDIO</div>
-  <h1 data-t="heroTitle">G‘oyangizni <span>san’atga</span> aylantiramiz.</h1>
-  <p data-t="heroText">Dizayn, video montaj va kreativ yechimlar. Brendingiz uchun professional raqamli xizmatlar.</p>
-  <a class="btn" href="https://t.me/FmlStudioTv" target="_blank" rel="noopener" data-t="heroButton">Biz bilan bog‘laning →</a>
- </div>
-</section>
-
-<section id="services">
- <h2 class="section-title" data-t="servicesTitle">Bizning <span>xizmatlarimiz</span></h2>
- <div class="cards">
-  <article class="card">
-   <div class="num">01</div>
-   <h3 data-t="s1">Grafik dizayn</h3>
-   <p data-t="sd1">Logo, banner, poster va reklama materiallari.</p>
-  </article>
-  <article class="card">
-   <div class="num">02</div>
-   <h3 data-t="s2">Video montaj</h3>
-   <p data-t="sd2">Treylerlar, reels va kreativ videolar.</p>
-  </article>
-  <article class="card">
-   <div class="num">03</div>
-   <h3 data-t="s3">Brending va SMM</h3>
-   <p data-t="sd3">Brend uslubi, ijtimoiy tarmoqlar dizayni va reklama.</p>
-  </article>
- </div>
-</section>
-
-<section id="projects">
- <h2 class="section-title" data-t="projectsTitle">Telegram <span>loyihalarimiz</span></h2>
- <p class="lead" data-t="projectsLead">Barcha Telegram loyihalarimiz kategoriyalar bo‘yicha bir joyda.</p>
- <div class="filters" id="filters">
-  <button class="filter active" data-filter="all" data-t="all">Barchasi</button>
-  <button class="filter" data-filter="series" data-t="series">Seriallar</button>
-  <button class="filter" data-filter="movies" data-t="movies">Kino va tarjima</button>
-  <button class="filter" data-filter="community" data-t="community">Guruhlar</button>
-  <button class="filter" data-filter="media" data-t="media">Media loyihalar</button>
- </div>
- <div class="project-grid" id="projectGrid"></div>
-</section>
-
-<section class="about" id="about">
- <div class="about-in">
-  <h2 class="section-title" data-t="aboutTitle">FML <span>STUDIO</span></h2>
-  <p data-t="aboutText">Kreativ g‘oyalarni zamonaviy dizayn va professional montaj orqali hayotga tatbiq etamiz. Har bir loyiha — o‘ziga xos yondashuv va sifatli natija.</p>
- </div>
-</section>
-
-<section class="contact" id="contact">
- <h2 class="section-title" data-t="contactTitle">Loyihangizni <span>boshlaymiz!</span></h2>
- <p data-t="contactText">Buyurtma va hamkorlik uchun Telegram orqali bog‘laning.</p>
- <a class="btn" href="https://t.me/FmlStudioTv" target="_blank" rel="noopener" data-t="contactButton">Telegram orqali yozish →</a>
-</section>
-</main>
-
-<footer>© 2026 <span style="color:#d6ad59">FML STUDIO</span>. <span data-t="rights">Barcha huquqlar himoyalangan.</span></footer>
-
-<script>
-const projects=[
-["Turk Dizi","TurkDizi","community"],
-["YEROSTI","YerOstiTv","series"],
-["YERALTI","YeraltiTv","series"],
-["Qashqirlar Makoni","QashqirlarMakoni","series"],
-["Eşkiya Dünyaya Hükümdar Olmaz","EskiyaDunyayaHukumdarOlmaz","series"],
-["Ben Bu Cihana Sığmazam","Ben_Bu_Cihana_Sigmazam","series"],
-["Kurtlar Vadisi","KurtlarVadisiDizi","series"],
-["Çift Kişilik Oda","Cift_Kisilik_Oda_Dizi","series"],
-["Kuruluş Osman","Kurulus_Osman_Official","series"],
-["Yankı: Görünmez El","YankiGorunmezEl","series"],
-["Hudutsuz Sevda","HudutsuzSevdaTv","series"],
-["Kuma","Kuma_Tv","series"],
-["Kudüs Fatihi Selahaddin","KudusFatihiSelahaddin","series"],
-["Reaksiyon","ReaksiyonDizi","series"],
-["Veliaht","VeliahtShowTv","series"],
-["Teşkilat","TeskilatTvI","series"],
-["Halef: Köklerin Çağrısı","halef_koklerin_cagrisi","series"],
-["Men Bu Jahonga Sig‘masam","Men_Bu_Jahonga_Sigmasam","series"],
-["Yabani","ydubtv","series"],
-["Çırak","CirakDizi","series"],
-["Marnalı","MarnaliDizi","series"],
-["Şebeke","Sebeke_Dizi","series"],
-["Leyla: Hayat Aşk Adalet","Leyla_HayatAskAdalet","series"],
-["Quddus Fathi Salohaddin Ayyub","QuddusFathiSalohaddinAyyub","series"],
-["Chegarasiz Muhabbat","ChegarasizMuhabbat","series"],
-["Hukmdor Orhan","HukmdorOrhanUzb","series"],
-["Uzoq Shahar","UzoqShaharSerial","series"],
-["Ayni Yağmur Altında","Ayni_Yagmur_Altinda","series"],
-["Sevdigim Sensin","Sevdigim_Sensin_Tv","series"],
-["Taşacak Bu Deniz","Tasacak_Bu_Deniz","series"],
-["Asırlık Gece","AsirlikGeceTv","series"],
-["Arafta","AraftaYeniSezon","series"],
-["Hamal","HamalTv","series"],
-["Tarjima Kinolarim","Tarjima_Kinolarim","movies"],
-["UZMOVI","Uzmovi_Kanali","movies"],
-["Brigada HD","BrigadaHD","movies"],
-["Tashkilot","TashkilotTv","series"],
-["Yeralti TV","ydub_tv","series"]
-];
-
-const tr={
-uz:{
-home:"Bosh sahifa",services:"Xizmatlar",projectsNav:"Loyihalar",about:"Biz haqimizda",contact:"Aloqa",
-heroTitle:"G‘oyangizni <span>san’atga</span> aylantiramiz.",
-heroText:"Dizayn, video montaj va kreativ yechimlar. Brendingiz uchun professional raqamli xizmatlar.",
-heroButton:"Biz bilan bog‘laning →",
-servicesTitle:"Bizning <span>xizmatlarimiz</span>",
-s1:"Grafik dizayn",sd1:"Logo, banner, poster va reklama materiallari.",
-s2:"Video montaj",sd2:"Treylerlar, reels va kreativ videolar.",
-s3:"Brending va SMM",sd3:"Brend uslubi, ijtimoiy tarmoqlar dizayni va reklama.",
-projectsTitle:"Telegram <span>loyihalarimiz</span>",
-projectsLead:"Barcha Telegram loyihalarimiz kategoriyalar bo‘yicha bir joyda.",
-all:"Barchasi",series:"Seriallar",movies:"Kino va tarjima",community:"Guruhlar",media:"Media loyihalar",
-open:"Kanalga o‘tish →",
-aboutTitle:"FML <span>STUDIO</span>",
-aboutText:"Kreativ g‘oyalarni zamonaviy dizayn va professional montaj orqali hayotga tatbiq etamiz. Har bir loyiha — o‘ziga xos yondashuv va sifatli natija.",
-contactTitle:"Loyihangizni <span>boshlaymiz!</span>",
-contactText:"Buyurtma va hamkorlik uchun Telegram orqali bog‘laning.",
-contactButton:"Telegram orqali yozish →",
-rights:"Barcha huquqlar himoyalangan."
-},
-ru:{
-home:"Главная",services:"Услуги",projectsNav:"Проекты",about:"О нас",contact:"Контакты",
-heroTitle:"Превращаем идеи в <span>искусство.</span>",
-heroText:"Дизайн, видеомонтаж и креативные решения. Профессиональные цифровые услуги для вашего бренда.",
-heroButton:"Связаться с нами →",
-servicesTitle:"Наши <span>услуги</span>",
-s1:"Графический дизайн",sd1:"Логотипы, баннеры, постеры и рекламные материалы.",
-s2:"Видеомонтаж",sd2:"Трейлеры, Reels и креативные видео.",
-s3:"Брендинг и SMM",sd3:"Фирменный стиль, дизайн соцсетей и реклама.",
-projectsTitle:"Наши <span>Telegram-проекты</span>",
-projectsLead:"Все наши Telegram-проекты собраны здесь по категориям.",
-all:"Все",series:"Сериалы",movies:"Кино и перевод",community:"Сообщества",media:"Медиа-проекты",
-open:"Открыть канал →",
-aboutTitle:"FML <span>STUDIO</span>",
-aboutText:"Воплощаем креативные идеи с помощью современного дизайна и профессионального монтажа. Каждый проект — индивидуальный подход и качественный результат.",
-contactTitle:"Начнём ваш <span>проект!</span>",
-contactText:"Для заказа и сотрудничества свяжитесь с нами через Telegram.",
-contactButton:"Написать в Telegram →",
-rights:"Все права защищены."
-},
-tr:{
-home:"Ana Sayfa",services:"Hizmetler",projectsNav:"Projeler",about:"Hakkımızda",contact:"İletişim",
-heroTitle:"Fikirlerinizi <span>sanata</span> dönüştürüyoruz.",
-heroText:"Tasarım, video kurgu ve yaratıcı çözümler. Markanız için profesyonel dijital hizmetler.",
-heroButton:"Bizimle iletişime geçin →",
-servicesTitle:"Hizmetlerimiz",
-s1:"Grafik Tasarım",sd1:"Logo, banner, poster ve reklam materyalleri.",
-s2:"Video Kurgu",sd2:"Fragmanlar, Reels ve yaratıcı videolar.",
-s3:"Markalaşma ve SMM",sd3:"Marka kimliği, sosyal medya tasarımı ve reklam.",
-projectsTitle:"Telegram <span>projelerimiz</span>",
-projectsLead:"Tüm Telegram projelerimiz kategorilere göre burada.",
-all:"Tümü",series:"Diziler",movies:"Film ve çeviri",community:"Topluluklar",media:"Medya projeleri",
-open:"Kanala git →",
-aboutTitle:"FML <span>STUDIO</span>",
-aboutText:"Yaratıcı fikirleri modern tasarım ve profesyonel kurgu ile hayata geçiriyoruz. Her proje özgün yaklaşım ve kaliteli sonuç demektir.",
-contactTitle:"Projenize <span>başlayalım!</span>",
-contactText:"Sipariş ve iş birliği için Telegram üzerinden bize ulaşın.",
-contactButton:"Telegram'dan yazın →",
-rights:"Tüm hakları saklıdır."
-}
-};
-
-let filter="all",language="uz";
-
-function draw(){
- const t=tr[language];
- const items=filter==="all"?projects:projects.filter(p=>p[2]===filter);
- document.getElementById("projectGrid").innerHTML=items.map(p=>
- `<article class="project">
-  <div class="p-top">
-   <div class="p-icon">TG</div>
-   <span class="p-cat">${t[p[2]]||t.media}</span>
-  </div>
-  <h3>${p[0]}</h3>
-  <p>@${p[1]}</p>
-  <a href="https://t.me/${p[1]}" target="_blank" rel="noopener">${t.open}</a>
- </article>`
- ).join("");
-}
-
-function setLang(v){
- language=v;
- document.documentElement.lang=v;
- document.querySelectorAll("[data-t]").forEach(e=>{
-  const k=e.dataset.t;
-  if(tr[v][k])e.innerHTML=tr[v][k];
- });
- document.querySelectorAll(".filter").forEach(b=>
-  b.classList.toggle("active",b.dataset.filter===filter)
- );
- draw();
- try{localStorage.setItem("fml-lang",v)}catch(e){}
-}
-
-document.getElementById("language").addEventListener("change",e=>setLang(e.target.value));
-
-document.getElementById("filters").addEventListener("click",e=>{
- const b=e.target.closest("button[data-filter]");
- if(!b)return;
- filter=b.dataset.filter;
- draw();
- document.querySelectorAll(".filter").forEach(x=>
-  x.classList.toggle("active",x===b)
- );
-});
-
-try{language=localStorage.getItem("fml-lang")||"uz"}catch(e){}
-document.getElementById("language").value=language;
-setLang(language);
-</script>
+  <header class="topbar"><div class="wrap nav">
+    <a class="brand" href="#home" aria-label="FML STUDIO — bosh sahifa">
+      <img src="file_000000005470821080fa8e63f32ac374.jpg" alt="FML STUDIO logo" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+      <span class="brand-mark" hidden>FML</span><span>FML STUDIO</span>
+    </a>
+    <nav class="navlinks" id="navLinks" aria-label="Main navigation">
+      <a href="#home" data-i18n="navHome">Bosh sahifa</a><a href="#services" data-i18n="navServices">Xizmatlar</a><a href="#portfolio" data-i18n="navPortfolio">Loyihalar</a><a href="#about" data-i18n="navAbout">Biz haqimizda</a><a href="#contact" data-i18n="navContact">Aloqa</a>
+    </nav>
+    <div class="nav-actions"><select class="lang" id="language" aria-label="Tilni tanlang"><option value="uz">UZ</option><option value="ru">RU</option><option value="tr">TR</option></select><button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menyuni ochish">☰</button></div>
+  </div></header>
+  <main>
+    <section class="hero" id="home"><div class="wrap hero-inner">
+      <div class="eyebrow" data-i18n="eyebrow">Creative digital studio</div>
+      <h1 data-i18n="heroTitle">G‘oyangizni <span>esda qolarli</span> vizualga aylantiramiz.</h1>
+      <p class="hero-copy" data-i18n="heroText">Brendingizga o‘ziga xos qiyofa beramiz: kuchli dizayn, dinamik video va kreativ kontent — barchasi bir studiyada.</p>
+      <div class="actions"><a class="btn" href="#contact" data-i18n="heroCta">Loyiha boshlash ↗</a><a class="btn secondary" href="#portfolio" data-i18n="heroSecondary">Ishlarimizni ko‘rish</a></div>
+      <div class="hero-meta"><div class="meta-item"><strong>360°</strong><span data-i18n="metaOne">Kreativ yondashuv</span></div><div class="meta-item"><strong>3</strong><span data-i18n="metaTwo">Til qo‘llab-quvvatlashi</span></div><div class="meta-item"><strong>01—05</strong><span data-i18n="metaThree">Asosiy xizmat yo‘nalishlari</span></div></div>
+    </div></section>
+    <section id="services"><div class="wrap">
+      <div class="section-head"><div class="kicker" data-i18n="servicesKicker">Nima qilamiz</div><h2 class="section-title" data-i18n="servicesTitle">Kreativ xizmatlar — <span class="gold">bir manzilda.</span></h2><p class="section-intro" data-i18n="servicesIntro">G‘oyadan tayyor natijagacha: biznesingiz va media loyihalaringiz uchun puxta ishlab chiqilgan vizual yechimlar.</p></div>
+      <div class="services-grid">
+        <article class="service"><div class="service-icon" aria-hidden="true">✳</div><h3 data-i18n="service1Title">Grafik dizayn</h3><p data-i18n="service1Text">Ijtimoiy tarmoqlar, posterlar va vizual materiallar uchun yagona uslub.</p></article>
+        <article class="service"><div class="service-icon" aria-hidden="true">▶</div><h3 data-i18n="service2Title">Video montaj</h3><p data-i18n="service2Text">Treyler, Reels, promo va dinamik roliklarni professional montaj qilish.</p></article>
+        <article class="service"><div class="service-icon" aria-hidden="true">◈</div><h3 data-i18n="service3Title">Logo yaratish</h3><p data-i18n="service3Text">Brendingiz xarakterini ifodalovchi esda qolarli logotip va identika.</p></article>
+        <article class="service"><div class="service-icon" aria-hidden="true">▧</div><h3 data-i18n="service4Title">Reklama bannerlari</h3><p data-i18n="service4Text">Diqqatni tortadigan reklama, muqova, afisha va kampaniya bannerlari.</p></article>
+        <article class="service"><div class="service-icon" aria-hidden="true">✦</div><h3 data-i18n="service5Title">Kreativ kontent</h3><p data-i18n="service5Text">Auditoriyangiz bilan aloqa o‘rnatadigan original media kontent.</p></article>
+      </div>
+    </div></section>
+    <section class="portfolio" id="portfolio"><div class="wrap">
+      <div class="section-head"><div class="kicker" data-i18n="portfolioKicker">Tanlangan ishlar</div><h2 class="section-title" data-i18n="portfolioTitle">Bizning <span class="gold">Telegram loyihalarimiz.</span></h2><p class="section-intro" data-i18n="portfolioIntro">Mavjud media loyihalar katalogi. Kategoriya bo‘yicha saralang va kanalni oching.</p></div>
+      <div class="filters" id="filters" aria-label="Loyiha filtrlari"><button class="filter active" type="button" data-filter="all" data-i18n="filterAll">Barchasi</button><button class="filter" type="button" data-filter="series" data-i18n="filterSeries">Seriallar</button><button class="filter" type="button" data-filter="movies" data-i18n="filterMovies">Kino va tarjima</button><button class="filter" type="button" data-filter="community" data-i18n="filterCommunity">Hamjamiyat</button></div>
+      <div class="project-grid" id="projectGrid" aria-live="polite"></div>
+    </div></section>
+    <section id="about"><div class="wrap about-grid">
+      <div class="about-panel" aria-label="FML Studio visual identity"><div><div class="monogram">FML</div><small>CREATIVE DIGITAL STUDIO</small></div></div>
+      <div class="about-copy"><div class="kicker" data-i18n="aboutKicker">Biz haqimizda</div><h2 class="section-title" data-i18n="aboutTitle">G‘oya. Uslub. <span class="gold">Natija.</span></h2><p data-i18n="aboutText">FML STUDIO — kreativ fikrlarni kuchli vizual tajribaga aylantiradigan raqamli studiya. Har bir loyihada maqsadni tushunish, o‘ziga xos uslub yaratish va sifatli natija taqdim etishga e’tibor beramiz.</p>
+        <div class="values"><div class="value"><strong data-i18n="value1Title">Individual yondashuv</strong><span data-i18n="value1Text">Har bir brendga mos yechim</span></div><div class="value"><strong data-i18n="value2Title">Puxta detal</strong><span data-i18n="value2Text">Sifat va izchillik</span></div><div class="value"><strong data-i18n="value3Title">Zamonaviy uslub</strong><span data-i18n="value3Text">Trend va kreativ muvozanati</span></div><div class="value"><strong data-i18n="value4Title">Aniq muloqot</strong><span data-i18n="value4Text">Buyurtma jarayoni tushunarli</span></div></div>
+      </div>
+    </div></section>
+    <section class="contact" id="contact"><div class="wrap contact-grid">
+      <div class="contact-info"><div class="kicker" data-i18n="contactKicker">Hamkorlik</div><h2 class="section-title" data-i18n="contactTitle">Keyingi g‘oyangizni <span class="gold">birga yarataylik.</span></h2><p data-i18n="contactText">Xizmat turini tanlang va loyiha haqida qisqacha yozing. Tayyor so‘rov Telegram orqali yuborish uchun ochiladi.</p>
+        <div class="contact-links"><a class="contact-link" href="https://t.me/FmlStudioTv" target="_blank" rel="noopener noreferrer"><b>TELEGRAM</b><span>@FmlStudioTv ↗</span></a><a class="contact-link" href="https://github.com/farruxsaparov1991-hue/FmlStudio" target="_blank" rel="noopener noreferrer"><b>GITHUB</b><span>FML STUDIO repository ↗</span></a></div>
+      </div>
+      <form class="order-form" id="orderForm">
+        <div class="field"><label for="name" data-i18n="formName">Ismingiz</label><input id="name" name="name" autocomplete="name" required maxlength="80" placeholder="Ismingiz"></div>
+        <div class="field"><label for="service" data-i18n="formService">Xizmat turi</label><select id="service" name="service" required><option value="" data-i18n="formChoose">Tanlang</option><option value="design" data-i18n="service1Title">Grafik dizayn</option><option value="video" data-i18n="service2Title">Video montaj</option><option value="logo" data-i18n="service3Title">Logo yaratish</option><option value="banner" data-i18n="service4Title">Reklama bannerlari</option><option value="content" data-i18n="service5Title">Kreativ kontent</option><option value="other" data-i18n="formOther">Boshqa</option></select></div>
+        <div class="field full"><label for="details" data-i18n="formDetails">Loyiha haqida</label><textarea id="details" name="details" required maxlength="1200" placeholder="Qanday natija kerak?"></textarea></div>
+        <button class="btn field full" type="submit" data-i18n="formSubmit">Buyurtma yuborish ↗</button><p class="form-note" data-i18n="formNote">Tugma Telegram’da tayyor xabarni ochadi. Xabarni yuborishdan oldin tekshirishingiz mumkin.</p>
+      </form>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> <span class="footer-brand">FML STUDIO</span>. <span data-i18n="rights">Barcha huquqlar himoyalangan.</span></span><a href="#home" data-i18n="backTop">Yuqoriga ↑</a></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    const projects = [
+      ["TurkDizi","TurkDizi","community"],["YEROSTI","YerOstiTv","series"],["YERALTI","YeraltiTv","series"],
+      ["Qashqirlar Makoni","QashqirlarMakoni","series"],["Eşkiya Dünyaya Hükümdar Olmaz","EskiyaDunyayaHukumdarOlmaz","series"],
+      ["Ben Bu Cihana Sığmazam","Ben_Bu_Cihana_Sigmazam","series"],["Kurtlar Vadisi","KurtlarVadisiDizi","series"],
+      ["Çift Kişilik Oda","Cift_Kisilik_Oda_Dizi","series"],["Kuruluş Osman","Kurulus_Osman_Official","series"],
+      ["Yankı: Görünmez El","YankiGorunmezEl","series"],["Hudutsuz Sevda","HudutsuzSevdaTv","series"],
+      ["Kuma","Kuma_Tv","series"],["Kudüs Fatihi Selahaddin","KudusFatihiSelahaddin","series"],
+      ["Reaksiyon","ReaksiyonDizi","series"],["Veliaht","VeliahtShowTv","series"],["Teşkilat","TeskilatTvI","series"],
+      ["Halef: Köklerin Çağrısı","halef_koklerin_cagrisi","series"],["Men Bu Jahonga Sig‘masam","Men_Bu_Jahonga_Sigmasam","series"],
+      ["Yabani","ydubtv","series"],["Çırak","CirakDizi","series"],["Marnalı","MarnaliDizi","series"],
+      ["Şebeke","Sebeke_Dizi","series"],["Leyla: Hayat Aşk Adalet","Leyla_HayatAskAdalet","series"],
+      ["Quddus Fathi Salohaddin Ayyub","QuddusFathiSalohaddinAyyub","series"],["Chegarasiz Muhabbat","ChegarasizMuhabbat","series"],
+      ["Hukmdor Orhan","HukmdorOrhanUzb","series"],["Uzoq Shahar","UzoqShaharSerial","series"],["Ayni Yağmur Altında","Ayni_Yagmur_Altinda","series"],
+      ["Sevdigim Sensin","Sevdigim_Sensin_Tv","series"],["Taşacak Bu Deniz","Tasacak_Bu_Deniz","series"],
+      ["Asırlık Gece","AsirlikGeceTv","series"],["Arafta","AraftaYeniSezon","series"],["Hamal","HamalTv","series"],
+      ["Tarjima Kinolarim","Tarjima_Kinolarim","movies"],["UZMOVI","Uzmovi_Kanali","movies"],
+      ["Brigada HD","BrigadaHD","movies"],["Tashkilot","TashkilotTv","series"],["Yabani TV","ydub_tv","series"]
+    ];
+    const translations = {
+      uz:{navHome:"Bosh sahifa",navServices:"Xizmatlar",navPortfolio:"Loyihalar",navAbout:"Biz haqimizda",navContact:"Aloqa",eyebrow:"Creative digital studio",heroTitle:"G‘oyangizni <span>esda qolarli</span> vizualga aylantiramiz.",heroText:"Brendingizga o‘ziga xos qiyofa beramiz: kuchli dizayn, dinamik video va kreativ kontent — barchasi bir studiyada.",heroCta:"Loyiha boshlash ↗",heroSecondary:"Ishlarimizni ko‘rish",metaOne:"Kreativ yondashuv",metaTwo:"Til qo‘llab-quvvatlashi",metaThree:"Asosiy xizmat yo‘nalishlari",servicesKicker:"Nima qilamiz",servicesTitle:"Kreativ xizmatlar — <span class='gold'>bir manzilda.</span>",servicesIntro:"G‘oyadan tayyor natijagacha: biznesingiz va media loyihalaringiz uchun puxta ishlab chiqilgan vizual yechimlar.",service1Title:"Grafik dizayn",service1Text:"Ijtimoiy tarmoqlar, posterlar va vizual materiallar uchun yagona uslub.",service2Title:"Video montaj",service2Text:"Treyler, Reels, promo va dinamik roliklarni professional montaj qilish.",service3Title:"Logo yaratish",service3Text:"Brendingiz xarakterini ifodalovchi esda qolarli logotip va identika.",service4Title:"Reklama bannerlari",service4Text:"Diqqatni tortadigan reklama, muqova, afisha va kampaniya bannerlari.",service5Title:"Kreativ kontent",service5Text:"Auditoriyangiz bilan aloqa o‘rnatadigan original media kontent.",portfolioKicker:"Tanlangan ishlar",portfolioTitle:"Bizning <span class='gold'>Telegram loyihalarimiz.</span>",portfolioIntro:"Mavjud media loyihalar katalogi. Kategoriya bo‘yicha saralang va kanalni oching.",filterAll:"Barchasi",filterSeries:"Seriallar",filterMovies:"Kino va tarjima",filterCommunity:"Hamjamiyat",openProject:"Kanalni ochish ↗",aboutKicker:"Biz haqimizda",aboutTitle:"G‘oya. Uslub. <span class='gold'>Natija.</span>",aboutText:"FML STUDIO — kreativ fikrlarni kuchli vizual tajribaga aylantiradigan raqamli studiya. Har bir loyihada maqsadni tushunish, o‘ziga xos uslub yaratish va sifatli natija taqdim etishga e’tibor beramiz.",value1Title:"Individual yondashuv",value1Text:"Har bir brendga mos yechim",value2Title:"Puxta detal",value2Text:"Sifat va izchillik",value3Title:"Zamonaviy uslub",value3Text:"Trend va kreativ muvozanati",value4Title:"Aniq muloqot",value4Text:"Buyurtma jarayoni tushunarli",contactKicker:"Hamkorlik",contactTitle:"Keyingi g‘oyangizni <span class='gold'>birga yarataylik.</span>",contactText:"Xizmat turini tanlang va loyiha haqida qisqacha yozing. Tayyor so‘rov Telegram orqali yuborish uchun ochiladi.",formName:"Ismingiz",formService:"Xizmat turi",formChoose:"Tanlang",formOther:"Boshqa",formDetails:"Loyiha haqida",formSubmit:"Buyurtma yuborish ↗",formNote:"Tugma Telegram’da tayyor xabarni ochadi. Xabarni yuborishdan oldin tekshirishingiz mumkin.",rights:"Barcha huquqlar himoyalangan.",backTop:"Yuqoriga ↑",namePlaceholder:"Ismingiz",detailsPlaceholder:"Qanday natija kerak?",toast:"Telegram’da buyurtma xabari tayyorlandi."},
+      ru:{navHome:"Главная",navServices:"Услуги",navPortfolio:"Проекты",navAbout:"О студии",navContact:"Контакты",eyebrow:"Креативная digital-студия",heroTitle:"Превращаем ваши идеи в <span>запоминающийся</span> визуал.",heroText:"Создаём уникальный образ вашего бренда: выразительный дизайн, динамичное видео и креативный контент — в одной студии.",heroCta:"Начать проект ↗",heroSecondary:"Смотреть работы",metaOne:"Креативный подход",metaTwo:"Языка интерфейса",metaThree:"Основных направлений",servicesKicker:"Наши возможности",servicesTitle:"Креативные услуги — <span class='gold'>в одном месте.</span>",servicesIntro:"От идеи до готового результата: продуманные визуальные решения для вашего бизнеса и медиа-проектов.",service1Title:"Графический дизайн",service1Text:"Единый визуальный стиль для соцсетей, постеров и материалов.",service2Title:"Видеомонтаж",service2Text:"Профессиональный монтаж трейлеров, Reels, промо и динамичных роликов.",service3Title:"Создание логотипа",service3Text:"Запоминающийся логотип и айдентика, отражающие характер бренда.",service4Title:"Рекламные баннеры",service4Text:"Яркая реклама, обложки, афиши и баннеры для кампаний.",service5Title:"Креативный контент",service5Text:"Оригинальный медиаконтент для общения с вашей аудиторией.",portfolioKicker:"Избранные проекты",portfolioTitle:"Наши <span class='gold'>Telegram-проекты.</span>",portfolioIntro:"Каталог действующих медиа-проектов. Выберите категорию и откройте канал.",filterAll:"Все",filterSeries:"Сериалы",filterMovies:"Кино и перевод",filterCommunity:"Сообщества",openProject:"Открыть канал ↗",aboutKicker:"О студии",aboutTitle:"Идея. Стиль. <span class='gold'>Результат.</span>",aboutText:"FML STUDIO — цифровая студия, превращающая креативные идеи в выразительный визуальный опыт. В каждом проекте мы стремимся понять задачу, создать уникальный стиль и обеспечить качественный результат.",value1Title:"Индивидуальный подход",value1Text:"Решение для каждого бренда",value2Title:"Внимание к деталям",value2Text:"Качество и последовательность",value3Title:"Современный стиль",value3Text:"Баланс трендов и креатива",value4Title:"Понятная коммуникация",value4Text:"Прозрачный процесс заказа",contactKicker:"Сотрудничество",contactTitle:"Давайте вместе создадим <span class='gold'>вашу следующую идею.</span>",contactText:"Выберите услугу и кратко опишите проект. Готовый запрос откроется в Telegram для отправки.",formName:"Ваше имя",formService:"Тип услуги",formChoose:"Выберите",formOther:"Другое",formDetails:"О проекте",formSubmit:"Отправить заявку ↗",formNote:"Кнопка откроет готовое сообщение в Telegram. Перед отправкой его можно проверить.",rights:"Все права защищены.",backTop:"Наверх ↑",namePlaceholder:"Ваше имя",detailsPlaceholder:"Какой результат вам нужен?",toast:"Сообщение с заявкой подготовлено в Telegram."},
+      tr:{navHome:"Ana Sayfa",navServices:"Hizmetler",navPortfolio:"Projeler",navAbout:"Hakkımızda",navContact:"İletişim",eyebrow:"Yaratıcı dijital stüdyo",heroTitle:"Fikirlerinizi <span>akılda kalan</span> görsellere dönüştürüyoruz.",heroText:"Markanıza özgün bir kimlik kazandırıyoruz: güçlü tasarım, dinamik video ve yaratıcı içerik — hepsi tek stüdyoda.",heroCta:"Projeye başlayın ↗",heroSecondary:"Çalışmaları görün",metaOne:"Yaratıcı yaklaşım",metaTwo:"Arayüz dili",metaThree:"Temel hizmet alanı",servicesKicker:"Neler yapıyoruz",servicesTitle:"Yaratıcı hizmetler — <span class='gold'>tek adreste.</span>",servicesIntro:"Fikirden sonuca: işletmeniz ve medya projeleriniz için özenle hazırlanan görsel çözümler.",service1Title:"Grafik tasarım",service1Text:"Sosyal medya, poster ve görsel materyaller için tutarlı tasarım dili.",service2Title:"Video kurgu",service2Text:"Fragman, Reels, tanıtım ve dinamik videoların profesyonel kurgusu.",service3Title:"Logo tasarımı",service3Text:"Markanızın karakterini yansıtan akılda kalıcı logo ve kimlik.",service4Title:"Reklam bannerları",service4Text:"Dikkat çeken reklamlar, kapaklar, afişler ve kampanya bannerları.",service5Title:"Yaratıcı içerik",service5Text:"Hedef kitlenizle bağ kuran özgün medya içerikleri.",portfolioKicker:"Seçili projeler",portfolioTitle:"Telegram <span class='gold'>projelerimiz.</span>",portfolioIntro:"Mevcut medya projelerimizin kataloğu. Kategori seçin ve kanalı açın.",filterAll:"Tümü",filterSeries:"Diziler",filterMovies:"Film ve çeviri",filterCommunity:"Topluluk",openProject:"Kanalı aç ↗",aboutKicker:"Hakkımızda",aboutTitle:"Fikir. Stil. <span class='gold'>Sonuç.</span>",aboutText:"FML STUDIO, yaratıcı fikirleri güçlü bir görsel deneyime dönüştüren dijital bir stüdyodur. Her projede ihtiyacı anlamaya, özgün bir stil oluşturmaya ve kaliteli sonuç sunmaya odaklanıyoruz.",value1Title:"Kişiye özel yaklaşım",value1Text:"Her markaya uygun çözüm",value2Title:"Detaylara özen",value2Text:"Kalite ve tutarlılık",value3Title:"Modern stil",value3Text:"Trend ve yaratıcılık dengesi",value4Title:"Net iletişim",value4Text:"Anlaşılır sipariş süreci",contactKicker:"İş birliği",contactTitle:"Bir sonraki fikrinizi <span class='gold'>birlikte hayata geçirelim.</span>",contactText:"Hizmet türünü seçin ve projenizi kısaca anlatın. Hazır talep Telegram üzerinden gönderilmek üzere açılacaktır.",formName:"Adınız",formService:"Hizmet türü",formChoose:"Seçin",formOther:"Diğer",formDetails:"Proje hakkında",formSubmit:"Talep gönder ↗",formNote:"Düğme Telegram’da hazır mesajı açar. Göndermeden önce mesajı kontrol edebilirsiniz.",rights:"Tüm hakları saklıdır.",backTop:"Yukarı çık ↑",namePlaceholder:"Adınız",detailsPlaceholder:"Nasıl bir sonuç istiyorsunuz?",toast:"Talep mesajınız Telegram’da hazırlandı."}
+    };
+    let currentLang = "uz";
+    let currentFilter = "all";
+    const $ = (selector, root=document) => root.querySelector(selector);
+    function escapeHtml(value){return String(value).replace(/[&<>"\']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#39;"}[char]));}
+    function renderProjects(){
+      const t = translations[currentLang];
+      const visible = projects.filter(item => currentFilter === "all" || item[2] === currentFilter);
+      $("#projectGrid").innerHTML = visible.map(([title, username, category]) => `<article class="project"><div class="project-top"><span class="project-icon">TG</span><span class="project-cat">${t[category === "series" ? "filterSeries" : category === "movies" ? "filterMovies" : "filterCommunity"]}</span></div><h3>${escapeHtml(title)}</h3><p>@${escapeHtml(username)}</p><a href="https://t.me/${encodeURIComponent(username)}" target="_blank" rel="noopener noreferrer">${t.openProject}</a></article>`).join("");
+      $("#filters").querySelectorAll("[data-filter]").forEach(button => {const selected=button.dataset.filter===currentFilter;button.classList.toggle("active",selected);button.setAttribute("aria-pressed",String(selected));});
+    }
+    function setLanguage(language){
+      if(!translations[language]) language="uz";currentLang=language;document.documentElement.lang=language;$("#language").value=language;
+      document.querySelectorAll("[data-i18n]").forEach(element=>{const key=element.dataset.i18n;if(translations[language][key])element.innerHTML=translations[language][key];});
+      $("#name").placeholder=translations[language].namePlaceholder;$("#details").placeholder=translations[language].detailsPlaceholder;renderProjects();
+      try{localStorage.setItem("fml-language",language)}catch(error){}
+    }
+    $("#language").addEventListener("change",event=>setLanguage(event.target.value));
+    $("#filters").addEventListener("click",event=>{const button=event.target.closest("[data-filter]");if(!button)return;currentFilter=button.dataset.filter;renderProjects();});
+    $("#menuToggle").addEventListener("click",()=>{const open=$("#navLinks").classList.toggle("open");$("#menuToggle").setAttribute("aria-expanded",String(open));$("#menuToggle").textContent=open?"✕":"☰";});
+    $("#navLinks").addEventListener("click",event=>{if(event.target.closest("a")){$("#navLinks").classList.remove("open");$("#menuToggle").setAttribute("aria-expanded","false");$("#menuToggle").textContent="☰";}});
+    $("#orderForm").addEventListener("submit",event=>{
+      event.preventDefault();const form=new FormData(event.currentTarget);const t=translations[currentLang];const serviceSelect=$("#service");const serviceLabel=serviceSelect.options[serviceSelect.selectedIndex].text;const name=String(form.get("name")||"").trim();const details=String(form.get("details")||"").trim();
+      if(!name||!serviceSelect.value||!details){showToast(currentLang==="ru"?"Пожалуйста, заполните все поля.":currentLang==="tr"?"Lütfen tüm alanları doldurun.":"Iltimos, barcha maydonlarni to‘ldiring.");return;}
+      const heading=currentLang==="ru"?"Новая заявка — FML STUDIO":currentLang==="tr"?"Yeni talep — FML STUDIO":"Yangi buyurtma — FML STUDIO";
+      const message=`${heading}\n${t.formName}: ${name}\n${t.formService}: ${serviceLabel}\n${t.formDetails}: ${details}`;showToast(t.toast);
+      window.open("https://t.me/FmlStudioTv?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
+    });
+    function showToast(message){const toast=$("#toast");toast.textContent=message;toast.classList.add("show");window.setTimeout(()=>toast.classList.remove("show"),4200);}
+    $("#year").textContent=new Date().getFullYear();let savedLanguage="uz";try{savedLanguage=localStorage.getItem("fml-language")||"uz"}catch(error){}setLanguage(savedLanguage);
+  </script>
 </body>
 </html>
