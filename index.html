@@ -134,7 +134,7 @@
       if(!name||!serviceSelect.value||!details){showToast(currentLang==="ru"?"Пожалуйста, заполните все поля.":currentLang==="tr"?"Lütfen tüm alanları doldurun.":"Iltimos, barcha maydonlarni to‘ldiring.");return;}
       const heading=currentLang==="ru"?"Новая заявка — FML STUDIO":currentLang==="tr"?"Yeni talep — FML STUDIO":"Yangi buyurtma — FML STUDIO";
       const message=`${heading}\n${t.formName}: ${name}\n${t.formService}: ${serviceLabel}\n${t.formDetails}: ${details}`;showToast(t.toast);
-      window.open("https://t.me/FmlStudioTv?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
+      window.open("https://t.me/share/url?url="+encodeURIComponent("https://t.me/FmlStudioTv")+"&text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
     });
     function showToast(message){const toast=$("#toast");toast.textContent=message;toast.classList.add("show");window.setTimeout(()=>toast.classList.remove("show"),4200);}
     $("#year").textContent=new Date().getFullYear();let savedLanguage="uz";try{savedLanguage=localStorage.getItem("fml-language")||"uz"}catch(error){}setLanguage(savedLanguage);
