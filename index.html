@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>FML STUDIO | Creative Agency</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#d6ad59;--bg:#090909;--card:#151515;--white:#f5f5f5}
+body{background:var(--bg);color:var(--white);font-family:Arial,sans-serif;line-height:1.6}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 8%;border-bottom:1px solid #292929;position:sticky;top:0;background:#090909ee;z-index:10}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}.logo span{color:var(--gold)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{color:#ddd;text-decoration:none;font-size:14px}
+select{background:#171717;color:var(--gold);border:1px solid #555;padding:9px;border-radius:6px}
+.hero{min-height:620px;display:flex;align-items:center;padding:80px 10%;background:radial-gradient(ellipse at 80% 50%,#503b1c55,transparent 55%)}
+.hero-content{max-width:780px}
+.tag{color:var(--gold);letter-spacing:4px;font-size:13px}
+h1{font-size:clamp(42px,8vw,82px);line-height:1.08;margin:22px 0}
+h1 span,.gold{color:var(--gold)}
+.hero p{color:#aaa;font-size:18px;max-width:620px}
+.btn{display:inline-block;margin-top:30px;padding:14px 28px;background:var(--gold);color:#111;text-decoration:none;font-weight:bold;border-radius:4px}
+section{padding:85px 9%}
+.section-title{text-align:center;font-size:36px;margin-bottom:45px}
+.section-title span{color:var(--gold)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid #292929;padding:30px;border-radius:10px;transition:.3s}
+.card:hover{border-color:var(--gold);transform:translateY(-5px)}
+.card .number{font-size:32px;color:var(--gold)}
+.card h3{margin:15px 0;font-size:21px}
+.card p,.about p{color:#aaa}
+.about{background:#111}
+.about-inner{max-width:850px;margin:auto;text-align:center}
+.about p{font-size:17px}
+.portfolio-note{text-align:center;color:#aaa;background:#151515;padding:45px;border-radius:10px}
+.contact{text-align:center}
+.contact p{color:#aaa}
+footer{text-align:center;padding:28px;border-top:1px solid #292929;color:#888;font-size:14px}
+footer span{color:var(--gold)}
+@media(max-width:700px){
+ header{padding:16px 5%;flex-wrap:wrap;gap:14px}
+ nav{order:3;width:100%;justify-content:space-between;gap:8px}
+ nav a{font-size:12px}
+ .hero{min-height:540px;padding:65px 7%}
+ section{padding:65px 6%}
+ .services{grid-template-columns:1fr}
+ .section-title{font-size:29px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">FML <span>STUDIO</span></div>
+ <nav>
+  <a href="#home" data-i="home">Bosh sahifa</a>
+  <a href="#services" data-i="services">Xizmatlar</a>
+  <a href="#about" data-i="about">Biz haqimizda</a>
+  <a href="#contact" data-i="contact">Aloqa</a>
+  <select id="lang" aria-label="Language">
+   <option value="uz">UZ</option>
+   <option value="ru">RU</option>
+   <option value="tr">TR</option>
+  </select>
+ </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-content">
+  <div class="tag">CREATIVE DIGITAL STUDIO</div>
+  <h1 data-i="title">G‘oyangizni <span>san’atga</span> aylantiramiz.</h1>
+  <p data-i="intro">Dizayn, video montaj va kreativ yechimlar. Brendingiz uchun professional raqamli xizmatlar.</p>
+  <a class="btn" href="https://t.me/FmlStudioTv" target="_blank" data-i="button">Biz bilan bog‘laning →</a>
+ </div>
+</section>
+
+<section id="services">
+ <h2 class="section-title" data-i="serviceTitle">Bizning <span>xizmatlarimiz</span></h2>
+ <div class="services">
+  <div class="card">
+   <div class="number">01</div>
+   <h3 data-i="s1">Grafik dizayn</h3>
+   <p data-i="d1">Logo, banner, poster, reklama materiallari va professional vizual dizayn.</p>
+  </div>
+  <div class="card">
+   <div class="number">02</div>
+   <h3 data-i="s2">Video montaj</h3>
+   <p data-i="d2">Professional video montaj, treyler, reels va kreativ videolar.</p>
+  </div>
+  <div class="card">
+   <div class="number">03</div>
+   <h3 data-i="s3">Brending va SMM</h3>
+   <p data-i="d3">Brend uslubi, ijtimoiy tarmoqlar dizayni va reklama yechimlari.</p>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="about-inner">
+  <h2 class="section-title" data-i="aboutTitle">FML <span>STUDIO</span></h2>
+  <p data-i="aboutText">Biz kreativ g‘oyalarni zamonaviy dizayn va professional montaj orqali hayotga tatbiq etamiz. Har bir loyiha — o‘ziga xos yondashuv va sifatli natija.</p>
+ </div>
+</section>
+
+<section id="portfolio">
+ <h2 class="section-title" data-i="portfolioTitle">Bizning <span>portfolio</span></h2>
+ <div class="portfolio-note" data-i="portfolioText">Tez orada bu yerda eng yaxshi ishlarimiz namoyish etiladi.</div>
+</section>
+
+<section class="contact" id="contact">
+ <h2 class="section-title" data-i="contactTitle">Loyihangizni <span>boshlaymiz!</span></h2>
+ <p data-i="contactText">Buyurtma va hamkorlik uchun Telegram orqali biz bilan bog‘laning.</p>
+ <a class="btn" href="https://t.me/FmlStudioTv" target="_blank" data-i="contactButton">Telegram orqali yozish →</a>
+</section>
+</main>
+
+<footer>© 2026 <span>FML STUDIO</span>. <span data-i="rights">Barcha huquqlar himoyalangan.</span></footer>
+
+<script>
+const translations={
+uz:{
+home:"Bosh sahifa",services:"Xizmatlar",about:"Biz haqimizda",contact:"Aloqa",
+title:'G‘oyangizni <span>san’atga</span> aylantiramiz.',
+intro:"Dizayn, video montaj va kreativ yechimlar. Brendingiz uchun professional raqamli xizmatlar.",
+button:"Biz bilan bog‘laning →",serviceTitle:'Bizning <span>xizmatlarimiz</span>',
+s1:"Grafik dizayn",d1:"Logo, banner, poster, reklama materiallari va professional vizual dizayn.",
+s2:"Video montaj",d2:"Professional video montaj, treyler, reels va kreativ videolar.",
+s3:"Brending va SMM",d3:"Brend uslubi, ijtimoiy tarmoqlar dizayni va reklama yechimlari.",
+aboutTitle:'FML <span>STUDIO</span>',aboutText:"Biz kreativ g‘oyalarni zamonaviy dizayn va professional montaj orqali hayotga tatbiq etamiz. Har bir loyiha — o‘ziga xos yondashuv va sifatli natija.",
+portfolioTitle:'Bizning <span>portfolio</span>',portfolioText:"Tez orada bu yerda eng yaxshi ishlarimiz namoyish etiladi.",
+contactTitle:'Loyihangizni <span>boshlaymiz!</span>',contactText:"Buyurtma va hamkorlik uchun Telegram orqali biz bilan bog‘laning.",
+contactButton:"Telegram orqali yozish →",rights:"Barcha huquqlar himoyalangan."
+},
+ru:{
+home:"Главная",services:"Услуги",about:"О нас",contact:"Контакты",
+title:'Превращаем идеи в <span>искусство.</span>',
+intro:"Дизайн, видеомонтаж и креативные решения. Профессиональные цифровые услуги для вашего бренда.",
+button:"Связаться с нами →",serviceTitle:'Наши <span>услуги</span>',
+s1:"Графический дизайн",d1:"Логотипы, баннеры, постеры, рекламные материалы и визуальный дизайн.",
+s2:"Видеомонтаж",d2:"Профессиональный монтаж видео, трейлеры, Reels и креативные ролики.",
+s3:"Брендинг и SMM",d3:"Фирменный стиль, дизайн социальных сетей и рекламные решения.",
+aboutTitle:'FML <span>STUDIO</span>',aboutText:"Мы воплощаем креативные идеи с помощью современного дизайна и профессионального монтажа. Каждый проект — индивидуальный подход и качественный результат.",
+portfolioTitle:'Наше <span>портфолио</span>',portfolioText:"Скоро здесь появятся наши лучшие работы.",
+contactTitle:'Начнём ваш <span>проект!</span>',contactText:"Для заказа и сотрудничества свяжитесь с нами через Telegram.",
+contactButton:"Написать в Telegram →",rights:"Все права защищены."
+},
+tr:{
+home:"Ana Sayfa",services:"Hizmetler",about:"Hakkımızda",contact:"İletişim",
+title:'Fikirlerinizi <span>sanata</span> dönüştürüyoruz.',
+intro:"Tasarım, video kurgu ve yaratıcı çözümler. Markanız için profesyonel dijital hizmetler.",
+button:"Bizimle iletişime geçin →",serviceTitle:'Hizmetlerimiz',
+s1:"Grafik Tasarım",d1:"Logo, banner, poster, reklam materyalleri ve profesyonel görsel tasarım.",
+s2:"Video Kurgu",d2:"Profesyonel video kurgu, fragman, Reels ve yaratıcı videolar.",
+s3:"Markalaşma ve SMM",d3:"Marka kimliği, sosyal medya tasarımı ve reklam çözümleri.",
+aboutTitle:'FML <span>STUDIO</span>',aboutText:"Yaratıcı fikirleri modern tasarım ve profesyonel kurgu ile hayata geçiriyoruz. Her proje özgün yaklaşım ve kaliteli sonuç demektir.",
+portfolioTitle:'Portföyümüz',portfolioText:"En iyi çalışmalarımız çok yakında burada sergilenecek.",
+contactTitle:'Projenize <span>başlayalım!</span>',contactText:"Sipariş ve iş birliği için Telegram üzerinden bize ulaşın.",
+contactButton:"Telegram'dan yazın →",rights:"Tüm hakları saklıdır."
+}
+};
+function setLanguage(lang){
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-i]").forEach(el=>{
+  const key=el.dataset.i;
+  if(translations[lang][key]) el.innerHTML=translations[lang][key];
+ });
+ document.getElementById("lang").value=lang;
+ localStorage.setItem("fml-language",lang);
+}
+document.getElementById("lang").addEventListener("change",e=>setLanguage(e.target.value));
+setLanguage(localStorage.getItem("fml-language")||"uz");
+</script>
+</body>
+</html>
